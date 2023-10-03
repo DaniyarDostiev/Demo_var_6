@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Demo_var_6.ApplicationData;
+using Demo_var_6.Pages;
+
 namespace Demo_var_6
 {
     /// <summary>
@@ -23,6 +26,8 @@ namespace Demo_var_6
         public MainWindow()
         {
             InitializeComponent();
+            AppFrame.mainFrame = mainWindowFrame;
+            mainWindowFrame.Navigate(new LoginPage());
         }
     }
 }
