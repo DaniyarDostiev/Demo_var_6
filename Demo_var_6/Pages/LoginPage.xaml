@@ -32,8 +32,8 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" x:Name="loginButton" Click="loginClick" Width="150" Height="40" Content="Войти" FontSize="15"></Button>
-            <Button Grid.Column="1" x:Name="guestButton" Click="guestClick" Width="150" Height="40" Content="Гость" FontSize="15"></Button>
+            <Button Grid.Column="0" x:Name="loginButton" Click="loginClick" Width="150" Height="40" Content="Войти"></Button>
+            <Button Grid.Column="1" x:Name="guestButton" Click="guestClick" Width="150" Height="40" Content="Гость"></Button>
         </Grid>
     </Grid>
 </Page>

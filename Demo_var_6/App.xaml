@@ -7,6 +7,7 @@
         <Style TargetType="Button">
             <Setter Property="Background" Value="#76E383"/>
             <Setter Property="Foreground" Value="#498C51"/>
+            <Setter Property="FontSize" Value="15"/>
         </Style>
     </Application.Resources>
 </Application>

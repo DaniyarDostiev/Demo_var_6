@@ -59,7 +59,7 @@ namespace Demo_var_6.Pages
 
         private void guestClick(object sender, RoutedEventArgs e)
         {
-
+            AppFrame.mainFrame.Navigate(new AfterLoginPage(null, 0));
         }
     }
 }

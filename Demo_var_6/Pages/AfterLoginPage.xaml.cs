@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Demo_var_6.ApplicationData;
+
 namespace Demo_var_6.Pages
 {
     /// <summary>
@@ -24,20 +26,30 @@ namespace Demo_var_6.Pages
         public AfterLoginPage(string userName, int userRole)
         {
             InitializeComponent();
-            userNameTextBox.Text = userName;
+
+            userNameLabel.Content = userName;
             if (userRole == 1)
             {
-                userRoleTextBox.Text = "Админ";
+                userRoleLabel.Content = "Админ";
             } 
             else if (userRole == 2)
             {
-                userRoleTextBox.Text = "Клиент";
+                userRoleLabel.Content = "Клиент";
+            }
+            else if (userRole == 3)
+            {
+                userRoleLabel.Content = "Менеджер";
             }
             else
             {
-                userRoleTextBox.Text = "Менеджер";
+                userRoleLabel.Content = "Гость";
             }
             
+        }
+
+        private void exitButtonClick(object sender, RoutedEventArgs e)
+        {
+            AppFrame.mainFrame.Navigate(new LoginPage());
         }
     }
 }
