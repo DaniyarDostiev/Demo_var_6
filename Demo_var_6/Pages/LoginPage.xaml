@@ -17,6 +17,7 @@
             <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
 
+        <Image Grid.Row="0" HorizontalAlignment="Left" Width="50" VerticalAlignment="Center" Source="C:\Глоба\var6\Demo_var_6\Demo_var_6\Logo\logo.png"></Image>
         <Label Grid.Row="0" Content="Авторизация" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="25"></Label>
 
         <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">

@@ -17,12 +17,15 @@
             <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
 
+        
+
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="550"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            
+ 
+            <Image Grid.Column="0" HorizontalAlignment="Left" Width="50" VerticalAlignment="Center" Source="C:\Глоба\var6\Demo_var_6\Demo_var_6\Logo\logo.png"></Image>
             <Label Grid.Column="0" x:Name="userNameLabel" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15"></Label>
             <Label Grid.Column="1" x:Name="userRoleLabel" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15"></Label>
         </Grid>
