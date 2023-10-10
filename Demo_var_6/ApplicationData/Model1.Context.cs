@@ -24,10 +24,12 @@ namespace Demo_var_6.ApplicationData
         public static PetStoreEntities GetContext()
         {
             if (_context == null)
+            {
                 _context = new PetStoreEntities();
+            }
             return _context;
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

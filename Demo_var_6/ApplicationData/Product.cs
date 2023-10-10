@@ -22,7 +22,7 @@ namespace Demo_var_6.ApplicationData
     
         public string ProductArticleNumber { get; set; }
         public string ProductName { get; set; }
-        public decimal ProductCost { get; set; }
+        public int ProductCost { get; set; }
         public string ProductManufacturer { get; set; }
         public string ProductCategory { get; set; }
         public Nullable<int> ProductDiscountAmount { get; set; }

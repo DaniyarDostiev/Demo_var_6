@@ -35,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Logo\icon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -176,8 +176,19 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Resource Include="Logo\logo.png" />
-    <Resource Include="Logo\icon.ico" />
+    <Resource Include="ProductPictures\picture.png" />
+    <Resource Include="ProductPictures\E345R4.jpg" />
+    <Resource Include="ProductPictures\E431R5.png" />
+    <Resource Include="ProductPictures\E532Q5.jpg" />
+    <Resource Include="ProductPictures\F432F4.jpg" />
+    <Resource Include="ProductPictures\G345E4.jpg" />
+    <Resource Include="ProductPictures\G453T5.jpg" />
+    <Resource Include="ProductPictures\R356F4.jpg" />
+    <Resource Include="ProductPictures\T432F4.jpg" />
+    <Resource Include="ProductPictures\Y324F4.jpg" />
+    <Resource Include="ProductPictures\А112Т4.png" />
+    <Resource Include="Resources\logo.png" />
+    <Resource Include="Resources\icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

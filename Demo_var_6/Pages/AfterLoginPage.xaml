@@ -17,19 +17,90 @@
             <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
 
-        
 
-        <Grid Grid.Row="0">
+
+        <Grid Grid.Row="0" Style="{StaticResource secondColorBackground}">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="200"></ColumnDefinition>
             </Grid.ColumnDefinitions>
- 
-            <Image Grid.Column="0" HorizontalAlignment="Left" Width="50" VerticalAlignment="Center" Source="C:\Глоба\var6\Demo_var_6\Demo_var_6\Logo\logo.png"></Image>
-            <Label Grid.Column="0" x:Name="userNameLabel" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15"></Label>
-            <Label Grid.Column="1" x:Name="userRoleLabel" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15"></Label>
+            <Image Grid.Column="0" HorizontalAlignment="Left" Width="50" VerticalAlignment="Center" Source="..//Resources/logo.png"></Image>
+
+            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBox Name="textBoxFinder" Width="150" Height="30" Margin="5" TextChanged="textBoxFinderChanged"></TextBox>
+                <ComboBox Name="comboBoxSort" Width="150" Height="30" Margin="5" SelectionChanged="comboBoxSortChanged"></ComboBox>
+                <ComboBox Name="comboBoxFilter" Width="150" Height="30" Margin="5" SelectionChanged="comboBoxFilterChanged"></ComboBox>
+                <Label Name="quantityOfGoods" Margin="10" Content="5/10"></Label>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical">
+                <Label x:Name="userNameLabel" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15"></Label>
+                <Label x:Name="userRoleLabel" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15"></Label>
+            </StackPanel>
         </Grid>
 
-        <Button Grid.Row="2" x:Name="exitButton" Click="exitButtonClick" Content="Выйти" Width="150" Margin="5"></Button>
+        <ListBox Name="listBoxProducts" Grid.Row="1" HorizontalContentAlignment="Center" VerticalAlignment="Center" Margin="10" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                    <Setter Property="VerticalContentAlignment" Value="Stretch"></Setter>
+                    <Setter Property="BorderBrush" Value="Black"></Setter>
+                    <Setter Property="BorderThickness" Value="2"></Setter>
+                    <Setter Property="Margin" Value="10"></Setter>
+                </Style>
+            </ListBox.ItemContainerStyle>
+
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="2"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Name="productPicture" Source="{Binding ProductPhoto}"></Image>
+
+                        <Rectangle Grid.Column="1" Fill="Black"></Rectangle>
+
+                        <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left" Orientation="Vertical" Margin="10">
+                            <TextBlock Text="{Binding ProductName}" FontWeight="Bold" Margin="2"></TextBlock>
+                            <TextBlock Text="{Binding ProductDescription}" Margin="2"></TextBlock>
+                            <TextBlock Margin="2">
+                                <Run Text="Производитель:"></Run>
+                                <Run Text="{Binding ProductManufacturer}"></Run>
+                            </TextBlock>
+                            <TextBlock Margin="2">
+                                <Run Text="Цена:"></Run>
+                                <Run Text="{Binding ProductCost}"></Run>
+                                <Run Text="руб."></Run>
+                            </TextBlock>
+                        </StackPanel>
+
+                        <TextBlock Grid.Column="3" Text="{Binding ProductQuantityInStock}" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="500"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button x:Name="editButton" Click="editButtonClick" Content="Изменить" Width="100" Margin="5"></Button>
+                <Button x:Name="addButton" Click="addButtonClick" Content="Добавить" Width="100" Margin="5"></Button>
+                <Button x:Name="deleteButton" Click="deleteButtonClick" Content="Удалить" Width="100" Margin="5"></Button>
+                <Button x:Name="exitButton" Click="exitButtonClick" Content="Выйти" Width="100" Margin="5"></Button>
+            </StackPanel>
+
+            <StackPanel Name="stackPanelPageSwitcher" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Center"></StackPanel>
+        </Grid>
+
     </Grid>
 </Page>

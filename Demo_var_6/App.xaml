@@ -5,9 +5,17 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <Style TargetType="Button">
-            <Setter Property="Background" Value="#76E383"/>
-            <Setter Property="Foreground" Value="#498C51"/>
+            <Setter Property="Background" Value="#498C51"/>
+            <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontSize" Value="15"/>
+        </Style>
+
+        <Style x:Key="secondColorBackground">
+            <Setter Property="ItemsControl.Background" Value="#76E383"></Setter>
+        </Style>
+
+        <Style x:Key="thirdColorBackground">
+            <Setter Property="ItemsControl.Background" Value="#498C51"></Setter>
         </Style>
     </Application.Resources>
 </Application>
