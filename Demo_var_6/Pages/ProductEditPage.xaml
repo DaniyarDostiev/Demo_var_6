@@ -1,0 +1,113 @@
+﻿<Page x:Class="Demo_var_6.Pages.ProductEditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Demo_var_6.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      
+      FontFamily="Comic Sans MS"
+      Title="ListProducts" Background="White">
+
+    <Page.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="150"></Setter>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="150"></Setter>
+        </Style>
+        <Style x:Key="stackPanelProductData" TargetType="StackPanel">
+            <Setter Property="Orientation" Value="Vertical"/>
+            <Setter Property="Margin" Value="5, 0, 5, 10"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10">
+                <Border BorderBrush="Black" BorderThickness="2" >
+                    <Image Height="200" Width="200" Name="productPicture"></Image>
+                </Border>
+
+                <Button Name="buttonChangeImage" Click="changePictureButtonClick" Height="30" Margin="0, 10, 0, 0" Content="Изменить картинку"></Button>
+            </StackPanel>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+                    <TextBlock Text="Артикул" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                    <TextBox Name="articleTextBox" Width="100" Height="30" Margin="10"></TextBox>
+                </StackPanel>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Right">
+                        <StackPanel Orientation="Vertical" Style="{StaticResource stackPanelProductData}">
+                            <TextBlock Text="Категория"></TextBlock>
+                            <ComboBox Name="productCategoryComboBoxTextBox"></ComboBox>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical" Style="{StaticResource stackPanelProductData}">
+                            <TextBlock Text="Название" ></TextBlock>
+                            <TextBox Name="productNameTextBox"></TextBox>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical" Style="{StaticResource stackPanelProductData}">
+                            <TextBlock Text="Цена" ></TextBlock>
+                            <TextBox Name="productCostTextBox"></TextBox>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left">
+                        <StackPanel Orientation="Vertical" Style="{StaticResource stackPanelProductData}">
+                            <TextBlock Text="Производитель" ></TextBlock>
+                            <TextBox Name="productManufacturerTextBox"></TextBox>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical" Style="{StaticResource stackPanelProductData}">
+                            <TextBlock Text="Скидка" ></TextBlock>
+                            <TextBox Name="discountTextBox"></TextBox>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical" Style="{StaticResource stackPanelProductData}">
+                            <TextBlock Text="Количество на складе" ></TextBlock>
+                            <TextBox Name="quantityTextBox"></TextBox>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+
+                <StackPanel Grid.Row="2" Style="{StaticResource stackPanelProductData}" VerticalAlignment="Top" HorizontalAlignment="Center">
+                    <TextBlock Text="Описание" ></TextBlock>
+                    <TextBox Name="descriptionTextBox" Width="310" Height="60" AcceptsReturn="True" TextWrapping="Wrap"></TextBox>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button Content="Назад" Click="exitButtonClick" Width="150" Height="30" Margin="10"></Button>
+            <Button Content="Сохранить" Click="saveButtonClick" Width="150" Height="30" Margin="10"></Button>
+        </StackPanel>
+    </Grid>
+</Page>

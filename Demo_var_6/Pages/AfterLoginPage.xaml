@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       
       FontFamily="Comic Sans MS"
-      Title="LoginPage" Background="White">
+      Title="ListProducts" Background="White">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -31,7 +31,6 @@
                 <TextBox Name="textBoxFinder" Width="150" Height="30" Margin="5" TextChanged="textBoxFinderChanged"></TextBox>
                 <ComboBox Name="comboBoxSort" Width="150" Height="30" Margin="5" SelectionChanged="comboBoxSortChanged"></ComboBox>
                 <ComboBox Name="comboBoxFilter" Width="150" Height="30" Margin="5" SelectionChanged="comboBoxFilterChanged"></ComboBox>
-                <Label Name="quantityOfGoods" Margin="10" Content="5/10"></Label>
             </StackPanel>
 
             <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical">
@@ -66,7 +65,11 @@
                         <Rectangle Grid.Column="1" Fill="Black"></Rectangle>
 
                         <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left" Orientation="Vertical" Margin="10">
-                            <TextBlock Text="{Binding ProductName}" FontWeight="Bold" Margin="2"></TextBlock>
+                            <TextBlock FontWeight="Bold" Margin="2">
+                                <Run Text="{Binding ProductArticleNumber}"></Run>
+                                <Run Text="|"></Run>
+                                <Run Text="{Binding ProductName}"></Run>
+                            </TextBlock>
                             <TextBlock Text="{Binding ProductDescription}" Margin="2"></TextBlock>
                             <TextBlock Margin="2">
                                 <Run Text="Производитель:"></Run>

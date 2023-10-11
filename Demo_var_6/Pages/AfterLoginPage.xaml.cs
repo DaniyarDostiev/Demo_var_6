@@ -22,8 +22,16 @@ namespace Demo_var_6.Pages
     public partial class AfterLoginPage : Page
     {
         PageSwitcher pageSwitcher;
+        string selectedArticleNumber;
+        Product product;
+        string userName;
+        int userRole;
+
         public AfterLoginPage(string userName, int userRole)
         {
+            this.userName = userName;
+            this.userRole = userRole;
+
             InitializeComponent();
 
             userNameLabel.Content = userName;
@@ -34,14 +42,23 @@ namespace Demo_var_6.Pages
             else if (userRole == 2)
             {
                 userRoleLabel.Content = "Клиент";
+                editButton.Visibility = Visibility.Hidden;
+                addButton.Visibility = Visibility.Hidden;
+                deleteButton.Visibility = Visibility.Hidden;
             }
             else if (userRole == 3)
             {
                 userRoleLabel.Content = "Менеджер";
+                editButton.Visibility = Visibility.Hidden;
+                addButton.Visibility = Visibility.Hidden;
+                deleteButton.Visibility = Visibility.Hidden;
             }
             else
             {
                 userRoleLabel.Content = "Гость";
+                editButton.Visibility = Visibility.Hidden;
+                addButton.Visibility = Visibility.Hidden;
+                deleteButton.Visibility = Visibility.Hidden;
             }
 
             comboBoxFilter.Items.Add("Фильтры");
@@ -92,17 +109,37 @@ namespace Demo_var_6.Pages
 
         private void editButtonClick(object sender, RoutedEventArgs e)
         {
+            if (listBoxProducts.SelectedItem != null)
+            {
+                var selectedProduct = listBoxProducts.SelectedItem as Product;
 
+                if (selectedProduct != null)
+                {
+                    selectedArticleNumber = selectedProduct.ProductArticleNumber;
+                    product = PetStoreEntities.GetContext().Product.FirstOrDefault(x => x.ProductArticleNumber == selectedArticleNumber);
+                    AppFrame.mainFrame.Navigate(new ProductEditPage(product, userName, userRole));
+                }
+            }
         }
 
         private void addButtonClick(object sender, RoutedEventArgs e)
         {
-
+            AppFrame.mainFrame.Navigate(new ProductEditPage(new Product(), userName, userRole));
         }
 
         private void deleteButtonClick(object sender, RoutedEventArgs e)
         {
+            if (listBoxProducts.SelectedItem != null)
+            {
+                var selectedProduct = listBoxProducts.SelectedItem as Product;
 
+                if (selectedProduct != null)
+                {
+                    PetStoreEntities.GetContext().Product.Remove(selectedProduct);
+                    PetStoreEntities.GetContext().SaveChanges();
+                    findProducts();
+                }
+            }
         }
 
         private void textBoxFinderChanged(object sender, TextChangedEventArgs e)
@@ -119,7 +156,6 @@ namespace Demo_var_6.Pages
         {
             findProducts();
         }
-
 
         public class PageSwitcher
         {
