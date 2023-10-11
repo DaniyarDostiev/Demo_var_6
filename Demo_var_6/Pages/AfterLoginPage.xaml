@@ -99,7 +99,7 @@
                 <Button x:Name="exitButton" Click="exitButtonClick" Content="Выйти" Width="100" Margin="5"></Button>
             </StackPanel>
 
-            <StackPanel Name="stackPanelPageSwitcher" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Center"></StackPanel>
+            <StackPanel Name="stackPanelPageSwitcher" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center"></StackPanel>
         </Grid>
 
     </Grid>

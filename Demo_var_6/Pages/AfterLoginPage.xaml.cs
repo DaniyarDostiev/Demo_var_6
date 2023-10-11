@@ -82,6 +82,7 @@ namespace Demo_var_6.Pages
             pageSwitcher = new PageSwitcher(listBoxProducts, products);
             stackPanelPageSwitcher.Children.Clear();
             stackPanelPageSwitcher.Children.Add(pageSwitcher.gPageSwitcher);
+
         }
 
         private void exitButtonClick(object sender, RoutedEventArgs e)
