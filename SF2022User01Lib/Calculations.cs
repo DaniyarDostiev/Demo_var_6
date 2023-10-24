@@ -31,8 +31,6 @@ namespace SF2022User01Lib
                     for(int j = 0; j < iterations; j++)
                     {
                         TimeSpan currentPeriod = currentTime + TimeSpan.FromMinutes(consultationTime);
-                        //result.Add(currentTime.Hours.ToString() + ":" + currentTime.Minutes.ToString() + "-"
-                        //    + currentPeriod.Hours.ToString() + ":" + currentPeriod.Minutes.ToString());
                         result.Add(currentTime.ToString("hh\\:mm") + "-" + currentPeriod.ToString("hh\\:mm"));
                         currentTime = currentPeriod;
                     }
