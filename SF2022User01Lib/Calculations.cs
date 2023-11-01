@@ -10,6 +10,26 @@ namespace SF2022User01Lib
     {
         public string[] AvailablePeriods(TimeSpan[] startTimes, int[] durations, TimeSpan beginWorkingTime, TimeSpan endWorkingTime, int consultationTime)
         {
+            if (startTimes.Length == 0 || durations.Length == 0)
+            {
+                throw new Exception("one of the lists is empty");
+            }
+
+            if (startTimes.Length > durations.Length || startTimes.Length < durations.Length)
+            {
+                throw new Exception("different array lengths between start time and duration");
+            }
+
+            if (beginWorkingTime > endWorkingTime)
+            {
+                throw new Exception("the start time is greater than the end time");
+            }
+
+            if (consultationTime <= 0)
+            {
+                throw new Exception("consultation time is negative or equal to zero");
+            }
+
             List<string> result = new List<string>();
             TimeSpan currentTime = beginWorkingTime;
 
